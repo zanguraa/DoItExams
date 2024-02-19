@@ -5,6 +5,8 @@ VisualStudioVersion = 17.7.34202.233
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleCalculator", "ConsoleCalculator\ConsoleCalculator.csproj", "{21705052-69ED-4637-A390-C94AAB105B9B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GuessTheNumber", "GuessTheNumber\GuessTheNumber.csproj", "{7E9AA3E1-F65E-42CC-BAD2-3958EF56C79A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{21705052-69ED-4637-A390-C94AAB105B9B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{21705052-69ED-4637-A390-C94AAB105B9B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{21705052-69ED-4637-A390-C94AAB105B9B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7E9AA3E1-F65E-42CC-BAD2-3958EF56C79A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7E9AA3E1-F65E-42CC-BAD2-3958EF56C79A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7E9AA3E1-F65E-42CC-BAD2-3958EF56C79A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7E9AA3E1-F65E-42CC-BAD2-3958EF56C79A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
