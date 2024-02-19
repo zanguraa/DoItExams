@@ -112,5 +112,10 @@ namespace GuessTheNumber
            
             return $"{playerName},{DateTime.Now},{difficultyLevel},{attempts}";
         }
+
+        public string TopPlayer()
+        {
+            return $"{playerName},{attempts}";
+        }
     }
 }

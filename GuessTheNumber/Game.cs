@@ -17,6 +17,19 @@ namespace GuessTheNumber
         {
             gameLogic.PlayGame();
             saveGame.SaveResult(gameLogic.GetGameResult());
+            saveGame.TopTenPlayers();
+
+            Console.WriteLine("Do you want to see top 10 players? (yes/no)");
+            string choice = Console.ReadLine();
+            if (choice.ToLower() == "yes")
+            {
+                Console.WriteLine(saveGame.TopTenPlayers());
+            }
+            else
+            {
+
+                Console.WriteLine("Thank you for playing!");
+            }
         }
     }
 }
