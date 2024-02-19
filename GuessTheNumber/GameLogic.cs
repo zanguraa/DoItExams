@@ -11,6 +11,9 @@ namespace GuessTheNumber
         private int attempts;
         private bool correctGuess;
         private string difficultyLevel;
+        private string playerName;
+        private int attemptsLimit = 10;
+
 
         public void InitializeGame()
         {
@@ -62,7 +65,7 @@ namespace GuessTheNumber
         {
             InitializeGame();
 
-            while (!correctGuess)
+            while (!correctGuess && attempts < attemptsLimit)
             {
                 string input = Console.ReadLine();
 
@@ -77,16 +80,23 @@ namespace GuessTheNumber
                 if (userGuess < targetNumber)
                 {
                     Console.WriteLine("Too low! Try again.");
+                    Console.WriteLine($"you have left {attempts} try");
                 }
                 else if (userGuess > targetNumber)
                 {
                     Console.WriteLine("Too high! Try again.");
+                    Console.WriteLine($"you have left {attempts} try");
                 }
                 else
                 {
                     correctGuess = true;
                     Console.WriteLine($"Congratulations! You've guessed the number {targetNumber} in {attempts} attempts.");
                 }
+            }
+
+            if (!correctGuess)
+            {
+                Console.WriteLine($"Sorry, you've used all your attempts. The correct number was {targetNumber}.");
             }
         }
 
