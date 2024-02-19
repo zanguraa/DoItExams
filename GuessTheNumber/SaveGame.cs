@@ -12,7 +12,7 @@ namespace GuessTheNumber
             {
                 if (!File.Exists(fileName))
                 {
-                    string header = "Date,Difficulty Level,Attempts";
+                    string header = "PlayerName,Date,Difficulty Level,Attempts";
                     File.WriteAllText(fileName, header + Environment.NewLine);
                 }
                 File.AppendAllText(fileName, gameResult + Environment.NewLine);

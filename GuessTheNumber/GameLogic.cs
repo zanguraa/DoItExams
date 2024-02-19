@@ -20,6 +20,8 @@ namespace GuessTheNumber
             SetDifficultyLevel();
             attempts = 0;
             correctGuess = false;
+            Console.WriteLine("Enter your name:");
+            playerName = Console.ReadLine();
             Console.WriteLine($"Guess the number (between {minRange} and {maxRange}):");
         }
 
@@ -80,17 +82,17 @@ namespace GuessTheNumber
                 if (userGuess < targetNumber)
                 {
                     Console.WriteLine("Too low! Try again.");
-                    Console.WriteLine($"you have left {attempts} try");
+                    Console.WriteLine($"you have left {attemptsLimit - attempts} try");
                 }
                 else if (userGuess > targetNumber)
                 {
                     Console.WriteLine("Too high! Try again.");
-                    Console.WriteLine($"you have left {attempts} try");
+                    Console.WriteLine($"you have left {attemptsLimit - attempts} try");
                 }
                 else
                 {
                     correctGuess = true;
-                    Console.WriteLine($"Congratulations! You've guessed the number {targetNumber} in {attempts} attempts.");
+                    Console.WriteLine($"Congratulations {playerName}! You've guessed the number {targetNumber} in {attempts} attempts.");
                 }
             }
 
@@ -108,7 +110,7 @@ namespace GuessTheNumber
         public string GetGameResult()
         {
            
-            return $"{DateTime.Now},{difficultyLevel},{attempts}";
+            return $"{playerName},{DateTime.Now},{difficultyLevel},{attempts}";
         }
     }
 }
