@@ -15,7 +15,6 @@ namespace GuessTheNumber
 
         public void Start()
         {
-            gameLogic.InitializeGame();
             gameLogic.PlayGame();
             saveGame.SaveResult(gameLogic.GetGameResult());
         }

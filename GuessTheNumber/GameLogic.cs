@@ -6,15 +6,18 @@ namespace GuessTheNumber
     {
         private Random random = new Random();
         private int targetNumber;
+        private int minRange;
+        private int maxRange;
         private int attempts;
         private bool correctGuess;
+        private string difficultyLevel;
 
         public void InitializeGame()
         {
             SetDifficultyLevel();
             attempts = 0;
             correctGuess = false;
-            Console.WriteLine($"Guess the number (between 1 and {targetNumber}):");
+            Console.WriteLine($"Guess the number (between {minRange} and {maxRange}):");
         }
 
         private void SetDifficultyLevel()
@@ -27,31 +30,45 @@ namespace GuessTheNumber
             Console.Write("Enter your choice (1/2/3): ");
             string choice = Console.ReadLine();
 
-            int[] maxRanges = { 15, 25, 50 };
-            int index;
-
-            if (int.TryParse(choice, out int numericChoice) && numericChoice >= 1 && numericChoice <= 3)
+            switch (choice)
             {
-                index = numericChoice - 1;
-            }
-            else
-            {
-                Console.WriteLine("Invalid choice. Defaulting to Easy level.");
-                index = 0;
+                case "1":
+                    minRange = 1;
+                    maxRange = 15;
+                    difficultyLevel= "Easy";
+                    break;
+                case "2":
+                    minRange = 1;
+                    maxRange = 25;
+                    difficultyLevel = "Medium";
+                    break;
+                case "3":
+                    minRange = 1;
+                    maxRange = 50;
+                    difficultyLevel = "Hard";
+                    break;
+                default:
+                    Console.WriteLine("Invalid choice. Defaulting to Easy level.");
+                    minRange = 1;
+                    maxRange = 15;
+                    difficultyLevel = "Easy";
+                    break;
             }
 
-            targetNumber = GenerateRandomNumber(1, maxRanges[index]);
+            targetNumber = GenerateRandomNumber(minRange, maxRange);
         }
 
         public void PlayGame()
         {
+            InitializeGame();
+
             while (!correctGuess)
             {
                 string input = Console.ReadLine();
 
-                if (!int.TryParse(input, out int userGuess) || userGuess < 1 || userGuess > targetNumber)
+                if (!int.TryParse(input, out int userGuess) || userGuess < minRange || userGuess > maxRange)
                 {
-                    Console.WriteLine($"Invalid input. Please enter a valid number between 1 and {targetNumber}.");
+                    Console.WriteLine($"Invalid input. Please enter a valid number between {minRange} and {maxRange}.");
                     continue;
                 }
 
@@ -80,7 +97,7 @@ namespace GuessTheNumber
 
         public string GetGameResult()
         {
-            string difficultyLevel = "";
+           
             return $"{DateTime.Now},{difficultyLevel},{attempts}";
         }
     }
