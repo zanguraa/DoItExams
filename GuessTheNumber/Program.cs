@@ -1,13 +1,13 @@
-﻿using GuessTheNumberGame;
+﻿using System;
 
 namespace GuessTheNumber
 {
-    internal class Program
+    class Program
     {
         static void Main(string[] args)
         {
             Game game = new Game();
-            game.Play();
+            game.Start();
         }
     }
 }
