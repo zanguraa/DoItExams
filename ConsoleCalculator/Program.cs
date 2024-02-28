@@ -6,7 +6,8 @@ namespace ConsoleCalculator
     {
         static void Main(string[] args)
         {
-            Calculator calculator = new Calculator();
+            Calculator calculator = new Calculator("valeri", "zanguri", "email@gmail.com");
+
 
             while (true)
             {
