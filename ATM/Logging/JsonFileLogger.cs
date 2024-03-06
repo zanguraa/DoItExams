@@ -1,6 +1,7 @@
 ﻿using System.Text.Json;
 using System.Collections.Generic;
 using System.IO;
+using ATM.Logging;
 using ATM.Interfaces;
 
 namespace ATM.Logging

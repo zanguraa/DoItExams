@@ -15,6 +15,11 @@
 
     public void Deposit(decimal amount)
     {
+        if (amount <= 0)
+        {
+            throw new ArgumentException("Deposit amount must be positive.", nameof(amount));
+        }
+
         Balance += amount;
     }
 
